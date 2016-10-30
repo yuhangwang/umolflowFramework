@@ -1,4 +1,4 @@
-package.path = package.path .. ";?/init.lua;./deps/?.lua"
+package.path = package.path .. ";./?.lua;?/init.lua;./deps/?.lua"
 local parent = "test"
 local TK = require("PackageToolkit")
 local FX = require("umolflowFramework")

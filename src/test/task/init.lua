@@ -3,7 +3,8 @@ local M = { }
 local me = ...
 local name = "task"
 local members = {
-  "run"
+  "run",
+  "runParallel"
 }
 local T = TK.module.submodules(me, members)
 M[name] = function()
