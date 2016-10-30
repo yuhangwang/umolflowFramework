@@ -3,7 +3,8 @@ parent = "test"
 TK = require "PackageToolkit"
 FX = require "umolflowFramework"
 tests = {
-    'io'
+    -- 'io'
+    'task'
 }
 M = TK.module.submodules parent, tests
 
