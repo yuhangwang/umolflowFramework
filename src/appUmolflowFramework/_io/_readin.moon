@@ -2,22 +2,29 @@
 M = {}
 FX = require "FunctionalX"
 IO = require "ioLua"
-J = require "dkjson"
+J  = require "dkjson"
 
-M.readin = (arg_str) ->
+M.readin = (arg_str, keywords) ->
     args = FX.strings.split arg_str, ","
     param_file = args[1]
     optional_args = FX.lists.tail args
 
-    return {}, {} if param_file == nil
+    if param_file == nil
+        print "ERROR HINT: the input file %s is invalid", param_file
+        return {}, {} 
 
     params = J.decode (IO.text.readall param_file), 1, {}
 
-    return {}, {} if params == nil
+    if params == nil
+        print "ERROR HINT: the content of input file %s is invalid", param_file
+        return {}, {} 
     
-    for p in *params
-        return {}, {} if p['output'] == nil or 
-            p['input'] == nil or p['index'] == nil
+    for i = 1, #params
+        for k in *keywords
+            if params[i][k] == nil
+                print string.format 'ERROR HINT: the "%s" field of the %d record is invalid in input file "%s"', 
+                    k, i, param_file
+                return {}, {} 
     
     return params, optional_args
 
