@@ -22,7 +22,7 @@ M.readin = (arg_str, keywords) ->
     for i = 1, #params
         for k in *keywords
             if params[i][k] == nil
-                print string.format 'ERROR HINT: the "%s" field of the %d record is invalid in input file "%s"', 
+                print string.format 'ERROR HINT: the "%s" field of record (%d) is invalid in input file "%s"', 
                     k, i, param_file
                 return {}, {} 
     

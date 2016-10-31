@@ -19,7 +19,7 @@ M.readin = function(arg_str, keywords)
     for _index_0 = 1, #keywords do
       local k = keywords[_index_0]
       if params[i][k] == nil then
-        print(string.format('ERROR HINT: the "%s" field of the %d record is invalid in input file "%s"', k, i, param_file))
+        print(string.format('ERROR HINT: the "%s" field of record (%d) is invalid in input file "%s"', k, i, param_file))
         return { }, { }
       end
     end
