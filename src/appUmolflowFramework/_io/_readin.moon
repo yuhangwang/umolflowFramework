@@ -10,13 +10,13 @@ M.readin = (arg_str, keywords) ->
     optional_args = FX.lists.tail args
 
     if param_file == nil
-        print "ERROR HINT: the input file %s is invalid", param_file
+        print string.format "ERROR HINT: the input file %s is invalid", param_file
         return {}, {} 
 
     params = J.decode (IO.text.readall param_file), 1, {}
 
     if params == nil
-        print "ERROR HINT: the content of input file %s is invalid", param_file
+        print string.format "ERROR HINT: the content of input file %s is invalid", param_file
         return {}, {} 
     
     for i = 1, #params

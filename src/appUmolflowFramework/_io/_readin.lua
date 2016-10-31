@@ -7,12 +7,12 @@ M.readin = function(arg_str, keywords)
   local param_file = args[1]
   local optional_args = FX.lists.tail(args)
   if param_file == nil then
-    print("ERROR HINT: the input file %s is invalid", param_file)
+    print(string.format("ERROR HINT: the input file %s is invalid", param_file))
     return { }, { }
   end
   local params = J.decode((IO.text.readall(param_file)), 1, { })
   if params == nil then
-    print("ERROR HINT: the content of input file %s is invalid", param_file)
+    print(string.format("ERROR HINT: the content of input file %s is invalid", param_file))
     return { }, { }
   end
   for i = 1, #params do
