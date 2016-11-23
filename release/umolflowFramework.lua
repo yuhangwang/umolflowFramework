@@ -49,13 +49,19 @@ M.readin = function(arg_str, keywords)
   if params == nil then
     print(string.format('ERROR HINT: the content of input file "%s" is invalid', param_file))
     return { }, { }
-  end
-  for i = 1, #params do
-    for _index_0 = 1, #keywords do
-      local k = keywords[_index_0]
-      if params[i][k] == nil then
-        print(string.format('ERROR HINT: the "%s" field of record (%d) is invalid in input file "%s"', k, i, param_file))
-        return { }, { }
+  elseif #params == 0 and #(FX.table.keys(params)) > 0 then
+    print('ERROR HINT: the top level of the input file must be a list')
+    print(string.format('The content of your input file "%s" is:', param_file))
+    print((FX.table.str(params)))
+    return { }, { }
+  else
+    for i = 1, #params do
+      for _index_0 = 1, #keywords do
+        local k = keywords[_index_0]
+        if params[i][k] == nil then
+          print(string.format('ERROR HINT: the "%s" field of record (%d) is invalid in input file "%s"', k, i, param_file))
+          return { }, { }
+        end
       end
     end
   end
