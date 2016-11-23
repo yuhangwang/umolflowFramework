@@ -22,6 +22,7 @@ M.readin = (arg_str, keywords) ->
         return {}, {} 
     elseif #params == 0 and #(FX.table.keys(params)) > 0
         print 'ERROR HINT: the top level of the input file must be a list'
+        print "            i.e., everything must be inside top-level [] not {}"
         print string.format 'The content of your input file "%s" is:', param_file
         print (IO.text.readall param_file)
         return {}, {}
