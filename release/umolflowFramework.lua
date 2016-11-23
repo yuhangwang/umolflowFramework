@@ -4,6 +4,33 @@ do
 
 do
 local _ENV = _ENV
+package.preload[ "appUmolflowFramework" ] = function( ... ) local arg = _G.arg;
+local TK = require("PackageToolkit")
+local parent = "appUmolflowFramework"
+local members = {
+  "_io",
+  "_task"
+}
+return TK.module.submodules(parent, members)
+
+end
+end
+
+do
+local _ENV = _ENV
+package.preload[ "appUmolflowFramework._io" ] = function( ... ) local arg = _G.arg;
+local TK = require("PackageToolkit")
+local parent = ...
+local members = {
+  "_readin"
+}
+return TK.module.subfunctions(parent, members)
+
+end
+end
+
+do
+local _ENV = _ENV
 package.preload[ "appUmolflowFramework._io._readin" ] = function( ... ) local arg = _G.arg;
 local M = { }
 local FX = require("FunctionalX")
@@ -47,33 +74,6 @@ local parent = ...
 local members = {
   "_run",
   "_runParallel"
-}
-return TK.module.subfunctions(parent, members)
-
-end
-end
-
-do
-local _ENV = _ENV
-package.preload[ "appUmolflowFramework" ] = function( ... ) local arg = _G.arg;
-local TK = require("PackageToolkit")
-local parent = "appUmolflowFramework"
-local members = {
-  "_io",
-  "_task"
-}
-return TK.module.submodules(parent, members)
-
-end
-end
-
-do
-local _ENV = _ENV
-package.preload[ "appUmolflowFramework._io" ] = function( ... ) local arg = _G.arg;
-local TK = require("PackageToolkit")
-local parent = ...
-local members = {
-  "_readin"
 }
 return TK.module.subfunctions(parent, members)
 
