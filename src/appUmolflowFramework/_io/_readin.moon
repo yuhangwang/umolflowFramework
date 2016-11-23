@@ -20,7 +20,7 @@ M.readin = (arg_str, keywords) ->
     if params == nil
         print string.format 'ERROR HINT: the content of input file "%s" is invalid', param_file
         return {}, {} 
-    elseif #params == 0 and FX.table.keys(params) != 0
+    elseif #params == 0 and #(FX.table.keys(params)) > 0
         print 'ERROR HINT: the top level of the input file must be a list'
         print string.format 'The content of your input file "%s" is:', param_file
         print (FX.table.str params)

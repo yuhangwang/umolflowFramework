@@ -55,6 +55,16 @@ M[name] = function()
       "3 4"
     }
   }, "io.readin case 3")
+  case(fn, {
+    "input/in2.json",
+    {
+      "k1",
+      "k2"
+    }
+  }, {
+    { },
+    { }
+  }, "io.readin case 4")
   return true
 end
 return M
