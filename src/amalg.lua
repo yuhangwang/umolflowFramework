@@ -1,5 +1,5 @@
 #!/usr/bin/env lua
-
+package.path = package.path..";?/init.lua;deps/?.lua;"
 -- **Amalg** is a Lua tool for bundling a Lua script and dependent
 -- Lua modules in a single `.lua` file for easier distribution.
 --
