@@ -6,7 +6,7 @@ JSON = J.require "dkjson"
 
 -- Run a task (function).
 M.runParallel = (fn_work, max_index, ...) ->
-    work = J.gen("os", "table", "io", "string", "dkjson", fn_work)
+    work = J.gen("os", "table", "io", "string", {"required":{"dkjson"}}, fn_work)
     accum = {}
     for i in *FX.numeric.indices(max_index, ...)
         accum[#accum+1] = work i if i <= max_index

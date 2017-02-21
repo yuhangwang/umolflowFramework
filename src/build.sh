@@ -5,5 +5,4 @@ lua amalg.lua -s umolflowFramework.lua -c -o ../release/umolflowFramework.lua \
     -i FunctionalX \
     -i ioLua \
     -i lpeg \
-    -i dkjson \
     -i lanes
