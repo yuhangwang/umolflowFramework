@@ -3,7 +3,7 @@ M = {}
 FX = require "FunctionalX"
 J  = require "dkjson"
 
-M.parse = (json_str, keywords) ->
+M.parse = (keywords, json_str) ->
 
     if json_str == nil
         print "ERROR HINT: the input JSON argument string cannot be empty for umolflowFramework.io.parse()"

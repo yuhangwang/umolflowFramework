@@ -1,7 +1,7 @@
 local M = { }
 local FX = require("FunctionalX")
 local J = require("dkjson")
-M.parse = function(json_str, keywords)
+M.parse = function(keywords, json_str)
   if json_str == nil then
     print("ERROR HINT: the input JSON argument string cannot be empty for umolflowFramework.io.parse()")
     print(string.format('            The input argument string is "%s"', arg_str))

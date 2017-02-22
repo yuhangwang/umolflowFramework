@@ -6,11 +6,11 @@ local case = TK.test.case
 M[name] = function()
   local fn = U.io.parse
   case(fn, {
-    '[{"k1":1,"k2":2}]',
     {
       "k1",
       "k2"
-    }
+    },
+    '[{"k1":1,"k2":2}]'
   }, {
     {
       {
