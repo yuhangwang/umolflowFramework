@@ -4,11 +4,7 @@ local IO = J.require("ioLua")
 local FX = J.require("FunctionalX")
 local JSON = J.require("dkjson")
 M.runParallel = function(fn_work, max_index, ...)
-  local work = J.gen("os", "table", "io", "string", {
-    ["required"] = {
-      "dkjson"
-    }
-  }, fn_work)
+  local work = J.gen("os", "table", "io", "string", fn_work)
   local accum = { }
   local _list_0 = FX.numeric.indices(max_index, ...)
   for _index_0 = 1, #_list_0 do
